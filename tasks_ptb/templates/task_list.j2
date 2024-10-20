@@ -1,0 +1,13 @@
+<b>Список задач:</b><br>
+
+{% for task in tasks %}
+  ID: {{ task.id }} | {{ task.desc }}   -
+    {% if task.completed == 0 %}
+        не завершена!<br>
+    {% else %}
+        завершена!
+    {% endif %}
+     | срок выполнения - {{ task.deadline.strftime("%H:%M %d-%m-%y")}}
+     <br>
+{% endfor %}
+<br>
